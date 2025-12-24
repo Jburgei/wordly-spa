@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wordly SPA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Wordly</h1>
+      <p class="subtitle">Search a word to get pronunciation, definitions, and more.</p>
+    </header>
+
+    <main>
+      <!-- Search Form -->
+      <form id="searchForm" class="search">
+        <label class="sr-only" for="wordInput">Search for a word</label>
+        <input
+          id="wordInput"
+          type="text"
+          placeholder="Type a word e.g. brilliant"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <!-- Status Messages -->
+      <p id="status" class="status hidden"></p>
+      <p id="error" class="error hidden"></p>
+
+      <!-- Results -->
+      <section id="results" class="results hidden" aria-live="polite">
+        <div class="top-row">
+          <h2 id="wordTitle">Word</h2>
+          <button id="playAudioBtn" class="audio-btn hidden" type="button">
+             Play
+          </button>
+          <audio id="audio"></audio>
+        </div>
+
+        <p id="phonetic" class="phonetic"></p>
+
+        <div class="card">
+          <h3>Part of Speech</h3>
+          <p id="partOfSpeech">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Definition</h3>
+          <p id="definition">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Example</h3>
+          <p id="example">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Synonyms</h3>
+          <ul id="synonyms" class="chips"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Built with HTML, CSS, and JavaScript</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
